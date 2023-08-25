@@ -1,9 +1,10 @@
-from decouple import config
+from decouple import Config, RepositoryEnv
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+config = Config(RepositoryEnv(BASE_DIR / '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -82,6 +83,10 @@ DATABASES = {
         'PORT': config('PORT')
     }
 }
+
+
+# DATABASES['default'] = dj_database_url.parse('postgres://vientodb_user:RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4@dpg-cjkaa0r37aks7388fmv0-a/vientodb')
+# postgres://viento_db_user:bvIbfn4j9YtoEaFr0cE7wUQLuXi1Dzuo@dpg-cjk9j2tk5scs73bqnug0-a/viento_db
 
 
 # Password validation
