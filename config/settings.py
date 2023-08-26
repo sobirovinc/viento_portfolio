@@ -13,10 +13,10 @@ env = environ.Env()
 env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'yt3%05apivq2f0yk!q_hhe154@u$&ou%p%!s92#sz-%gawuhc*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': dj_database_url.parse('postgres://vientodb_user:RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4@dpg-cjkaa0r37aks7388fmv0-a.oregon-postgres.render.com/vientodb')
 }
 # postgres://viento_db_user:bvIbfn4j9YtoEaFr0cE7wUQLuXi1Dzuo@dpg-cjk9j2tk5scs73bqnug0-a/viento_db
 
@@ -155,8 +155,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
-TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
+TELEGRAM_BOT_TOKEN = '6382435347:AAFZhBYwhpsRIuKIhBPA6HJzOUaJBImyobY'
+TELEGRAM_CHAT_ID = '381213938'
 
 
 REST_FRAMEWORK = {
