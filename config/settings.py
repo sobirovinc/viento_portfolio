@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-6e7o#c!48s*=8f)l&4fx+#ey+l!*@$u(pgu$k%mqt6%4@r!*8("
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Convert the string value to a boolean if needed
 DEBUG = DEBUG.lower() == 'true' if isinstance(DEBUG, str) else DEBUG
