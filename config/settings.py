@@ -3,18 +3,22 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
+import environ
+env = environ.Env()
+env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-6e7o#c!48s*=8f)l&4fx+#ey+l!*@$u(pgu$k%mqt6%4@r!*8("
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-# Convert the string value to a boolean if needed
-DEBUG = DEBUG.lower() == 'true' if isinstance(DEBUG, str) else DEBUG
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -83,19 +87,27 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'PORT': config('PORT')
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'vientodb',
+#         'USER': 'vientodb_user',
+#         'PASSWORD': 'RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4',
+#         'HOST': 'dpg-cjkaa0r37aks7388fmv0-a',
+#         'PORT': 5432,
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'vientodb',
-        'USER': 'vientodb_user',
-        'PASSWORD': 'RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4',
-        'HOST': 'dpg-cjkaa0r37aks7388fmv0-a',
-        'PORT': 5432,
-    }
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
-
-
-# DATABASES['default'] = dj_database_url.parse('postgres://vientodb_user:RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4@dpg-cjkaa0r37aks7388fmv0-a/vientodb')
 # postgres://viento_db_user:bvIbfn4j9YtoEaFr0cE7wUQLuXi1Dzuo@dpg-cjk9j2tk5scs73bqnug0-a/viento_db
 
 
