@@ -159,7 +159,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TELEGRAM_BOT_TOKEN = '6382435347:AAFZhBYwhpsRIuKIhBPA6HJzOUaJBImyobY'
-TELEGRAM_CHAT_ID = '381213938'
+TELEGRAM_CHAT_ID = '388459048'
 
 
 REST_FRAMEWORK = {
