@@ -1,4 +1,3 @@
-from decouple import Config, RepositoryEnv
 from pathlib import Path
 import os
 
