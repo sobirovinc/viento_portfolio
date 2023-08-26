@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
@@ -8,11 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY', default='default_secret_key')
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "django-insecure-6e7o#c!48s*=8f)l&4fx+#ey+l!*@$u(pgu$k%mqt6%4@r!*8("
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = os.environ.get('DEBUG', default=False)
+DEBUG = False
 
 # Convert the string value to a boolean if needed
 DEBUG = DEBUG.lower() == 'true' if isinstance(DEBUG, str) else DEBUG
@@ -87,11 +88,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', ''),
-        'USER': os.environ.get('USER', ''),
-        'PASSWORD': os.environ.get('PASSWORD', ''),
-        'HOST': os.environ.get('HOST', ''),
-        'PORT': os.environ.get('PORT', ''),
+        'NAME': 'viento_db',
+        'USER': 'postgres',
+        'PASSWORD': '0880',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
