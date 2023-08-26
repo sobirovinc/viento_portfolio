@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'viento_db',
-        'USER': 'postgres',
-        'PASSWORD': '0880',
-        'HOST': 'localhost',
+        'NAME': 'vientodb',
+        'USER': 'vientodb_user',
+        'PASSWORD': 'RQhVqVmljVuLgzsBCpWoDGvpjIRMfaB4',
+        'HOST': 'dpg-cjkaa0r37aks7388fmv0-a',
         'PORT': 5432,
     }
 }
